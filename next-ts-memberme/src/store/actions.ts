@@ -1,7 +1,7 @@
 import { createAction } from "redux-actions";
 import * as API from "~/lib/api";
 
-export function makeActionPrefix(prefix) {
+export function makeActionPrefix(prefix: any) {
   return {
     INDEX: prefix,
     INIT: prefix + "_INIT",
@@ -12,10 +12,10 @@ export function makeActionPrefix(prefix) {
   };
 }
 
-export function makeSagaActions(types) {
-  return function (api) {
+export function makeSagaActions(types: any) {
+  return function (api: any) {
     return {
-      request: (data) => api(data),
+      request: (data: any) => api(data),
       index: createAction(types.INDEX),
       init: createAction(types.INIT),
       pending: createAction(types.PENDING),
